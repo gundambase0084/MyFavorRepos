@@ -13,7 +13,8 @@ namespace web.Dal
         public DbSet<tbl_Right> tbl_rights { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.;Database=MyFavorRepos;User ID=test;Password=sa;");
+            //TODO: 你的appsettings.json里面已经放置了链接字符串，但是代码里面仍然是hardcode，这个需要优化一下
+            optionsBuilder.UseSqlServer(@"Server=.;Database=MyFavorRepos;User ID=sa;Password=P5ssw0rd@123;");
         }
  
     }
