@@ -93,6 +93,7 @@ namespace MyFavorRepos.Controllers
                 {
                     List<JObject>  newdatas = new List<JObject>();
                     newdatas = JsonConvert.DeserializeObject<List<JObject>>(datas["selectedItems"].ToString());
+                    //todo: 下面这部分属于业务逻辑，应该在解决方案中另外创建一个项目叫做 MyFavorRepos.Biz，然后将业务逻辑放入这个中间层项目
                     if (datas["type"].ToString() == "left")
                     {
                         List<string> keys = newdatas.Select(x => x["id"].ToString()).ToList();

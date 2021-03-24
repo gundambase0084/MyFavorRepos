@@ -124,6 +124,7 @@ class TblShuttle extends React.Component {
 
     componentDidMount() {
         //取得repo列表数据
+        //todo: 第三方系统API属于系统内部信息，不应该在前端内保存，请将这个内容移动到后端，并且将这个url放入配置文件
         fetch('https://api.github.com/users/idcf-boat-house/repos', {
             method: 'GET',
             mode: 'cors'
@@ -226,6 +227,7 @@ class TblShuttle extends React.Component {
             let _idsForDisplay = result.data;
             let itemsInfoMore = [];
             //时间原因没有研究出restapi的搜索语法，先循环取得数据后与后台返回的数据进行了匹配后生成mail内容
+            //TODO: 对第三方系统的访问应该放置在api层实现，从前端实现会造成网络请求的跨域请求等很多问题，前端应该只和自己应用的api进行交互
             fetch('https://api.github.com/users/idcf-boat-house/repos', {
                 method: 'GET',
                 mode: 'cors'
